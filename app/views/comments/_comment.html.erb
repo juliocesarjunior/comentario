@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= comment.body %>
+  </div>
+</div>
+
+<% unless !comment.persisted? %>
+  <div class="card">
+  </div>
+<% end %>

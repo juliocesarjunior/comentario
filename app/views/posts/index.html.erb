@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<%= link_to 'Novo Post', new_post_path, class: 'btn btn-default' %>
+<hr>
+<% @posts.each do |post| %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <br>
+      <p class="card-text"><%= truncate(post.body, length: 60) %></p>
+      
+      <%= link_to 'Editar', edit_post_path(post), class: 'btn btn-success' %>
+      <%= link_to post.title, post_path(post), class: 'btn btn-info' %>
+
+    </div>
+  </div>
+<% end %>
+
+<%#= link_to 'New Post', new_post_path %>
